@@ -78,4 +78,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO_ID_USER }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          message: ${{ github.workflow }} успешнейййше выполненo!
+          message: ${{ github.workflow }} уснейййше выполненo!
