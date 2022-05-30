@@ -6,8 +6,9 @@ services:
     volumes:
       - /var/lib/postgresql/data/
     env_file:
-      - ./.envкомментарий
+      - ./.env
   web:
+    image: morefine/workflow:latest
     build: ../api_yamdb/
     restart: always
     volumes:
