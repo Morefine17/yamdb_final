@@ -11,21 +11,15 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import AccessToken
+from reviews.models import Category, Comment, Genre, Review, Title
+from users.models import User
 
 from .filters import TitleFilter
 from .permissions import AdminOrReadOnly, AuthorOrStaffOrReadOnly, UserOrAdmin
-from .serializers import (
-    CategorySerializer,
-    CommentSerializer,
-    GenreSerializer,
-    ReviewSerializer,
-    TitleInputSerializer,
-    TitleOutputSerializer,
-    UserSerializer,
-    UserTokenSerializer,
-)
-from reviews.models import Category, Comment, Genre, Review, Title
-from users.models import User
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, ReviewSerializer,
+                          TitleInputSerializer, TitleOutputSerializer,
+                          UserSerializer, UserTokenSerializer)
 
 
 class CategoryViewSet(viewsets.ModelViewSet):

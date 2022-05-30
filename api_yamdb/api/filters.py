@@ -1,6 +1,5 @@
 import django_filters as filters
 from django.db import models
-
 from reviews.models import Title
 
 
