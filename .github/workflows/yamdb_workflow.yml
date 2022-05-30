@@ -21,6 +21,7 @@ jobs:
       - name: Test with flake8 and django tests
         run: |
           python -m flake8
+          pytest
           
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
@@ -40,7 +41,7 @@ jobs:
         with:
           context: ./api_yamdb
           push: true
-          tags: morefine/workflow:latest
+          tags: morefine/yamdb:latest
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
@@ -56,7 +57,7 @@ jobs:
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           script_stop: true
           script: |
-            sudo docker pull morefine/workflow:latest
+            sudo docker pull morefine/yamdb:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
@@ -77,4 +78,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO_ID_USER }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          message: ${{ github.workflow }} успешно выполнен!
+          message: ${{ github.workflow }} успешнейййше выполненo!
