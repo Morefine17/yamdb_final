@@ -9,7 +9,6 @@ services:
       - ./.env
   web:
     image: morefine/workflow:latest
-    build: ../yamdb_final/api_yamdb/
     restart: always
     volumes:
       - static_value:/app/static/
