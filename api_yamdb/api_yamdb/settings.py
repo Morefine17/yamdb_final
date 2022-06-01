@@ -8,8 +8,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '51.250.111.247',
-    'localhost',
-    'web',
 ]
 
 
