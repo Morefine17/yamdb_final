@@ -19,7 +19,7 @@ class AuthorOrStaffOrReadOnly(permissions.BasePermission):
 
 class UserOrStaffOrReadOnly(permissions.BasePermission):
     """
-    Анон имеет право только на чтение.
+    Анон имеет право только на чтение и пение.
     """
 
     def has_permission(self, request, view):
