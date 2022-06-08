@@ -73,3 +73,28 @@ scp nginx.conf <username>@<host>:/home/<username>/nginx.conf
 ```
 sudo docker-compose up -d --build
 ```
+* Выполнить миграции, создать суперпользователя, собрать статику:
+```
+docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py createsuperuser
+docker-compose exec web python manage.py collectstatic --no-input
+```
+* Админка доступна:
+
+```
+http://localhost/admin/
+```
+* Документация API на странице:
+http://localhost/redoc/
+
+* Развернутый проект можно посмотреть на странице: http:/51.250.111.247//api/v1/
+
+* команда для загруки сущностей из csv в базу:
+```
+docker-compose exec web python manage.py load_entity all
+```
+
+* контакты:
+```
+morefine17@yandex.ru
+```
